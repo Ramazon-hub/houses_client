@@ -1,8 +1,6 @@
 import "./Home.css";
 
-// import { localUrl,herokuUrl } from '../../assets/config'
 
-// Components
 
 
 const Home = ({ company }) => {

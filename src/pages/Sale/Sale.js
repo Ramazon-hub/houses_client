@@ -1,7 +1,5 @@
 import "./Sale.css";
 import {  useRef, useState } from "react";
-import  herokuUrl  from "../../assets/config";
-console.log(herokuUrl);
 // Components
 
 const Sale = ({ company }) => {
