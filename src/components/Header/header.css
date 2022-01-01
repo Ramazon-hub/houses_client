@@ -1,0 +1,24 @@
+.header {
+    background: #40e0d0;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .header .container {
+    max-width: 1200px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  
+  .header_logo{
+      text-decoration: none;
+      color: #000;
+  }
+  .header_link{
+    text-decoration: none;
+    margin-left: auto;
+    color: #000;
+
+  }

@@ -1,0 +1,51 @@
+#form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+#company{
+    text-align: center;
+}
+#company-link{
+    text-decoration: none;
+}
+#complex-apartments-list{
+list-style: none;
+/* height: 430px; */
+/* overflow-y:auto ; */
+}
+#complex-apartments-item{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+#text{
+    /* font-size: 20px; */
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.tanlangan{
+    border: 2px solid red;
+
+}
+/* .div{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+} */
+#select{
+    margin: 10px ;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid turquoise;
+    border-radius: 10px;
+}
+#title{
+    font-size: 20px;
+    margin-top: 10px;
+}
