@@ -1,7 +1,5 @@
 import "./Sale.css";
-import { Link, Route, Switch } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import SimpleImageSlider from "react-simple-image-slider";
+import {  useRef, useState } from "react";
 import { localUrl, herokuUrl } from "../../assets/config";
 
 // Components
@@ -37,7 +35,6 @@ const Sale = ({ company }) => {
       setHouse([]);
     })();
     SETCOMPANY(company.find((a) => a.id === companyId.current.value));
-    console.log(companyId.current.value);
   };
   const FuncComplex = () => {
     (async () => {
@@ -59,7 +56,6 @@ const Sale = ({ company }) => {
   };
   const FuncApartment = () => {
     (async () => {
-      console.log(`http://localhost:4000/bank/${sum}`);
       const DATA = await fetch(`http://localhost:4000/bank/${sum}`, {
         method: "GET",
         headers: {
@@ -71,15 +67,14 @@ const Sale = ({ company }) => {
     })();
     setHouse([apartment.find((a) => a.id === apartmentId.current.value)]);
   };
-  console.log(banks,'3');
-  console.log(house,'2');
+
   let sum = 0;
   house.length ? (sum = house[0].area * house[0].price) : (sum = 5000000000);
   const funcBank = () => {};
   const selectLi = () => {
   };
   const Submit = ()=>{
-    
+
   }
   return (
     <div id="container" className="div">
@@ -168,7 +163,6 @@ const Sale = ({ company }) => {
 
             </div>
           )}
-          {console.log(COMPANY)}
         </div>
       </form>
       <div id="apartment">
