@@ -96,8 +96,7 @@ email:''
    formData.fName=fname.current.value
    formData.lName=lname.current.value
    formData.email=email.current.value
-   console.log(lname.current.value,
-    email.current.value);
+   
 (async()=>{
   const DATA = await  fetch(`http://localhost:4000/sale`,{
     method:'POST',
