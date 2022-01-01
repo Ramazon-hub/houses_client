@@ -12,7 +12,7 @@ function App() {
   const [company,setCompany]=useState([])
   useEffect(()=>{
     (async()=>{
-        const DATA = await fetch(`http://localhost:4000/buy`,{
+        const DATA = await fetch(`https://houses-online.herokuapp.com/buy`,{
             method:"GET",
             headers: {
                 "Content-Type": "Application/json",

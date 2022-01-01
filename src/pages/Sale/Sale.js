@@ -20,7 +20,7 @@ const history = useHistory()
   const FuncCompany = () => {
     (async () => {
       const DATA = await fetch(
-        `http://localhost:4000/buy/${companyId.current.value}`,
+        `https://houses-online.herokuapp.com/buy/${companyId.current.value}`,
         {
           method: "GET",
           headers: {
@@ -39,7 +39,7 @@ const history = useHistory()
   const FuncComplex = () => {
     (async () => {
       const DATA = await fetch(
-        `http://localhost:4000/buy/${companyId.current.value}/${complexId.current.value}`,
+        `https://houses-online.herokuapp.com/buy/${companyId.current.value}/${complexId.current.value}`,
         {
           method: "GET",
           headers: {
@@ -56,7 +56,7 @@ const history = useHistory()
   };
   const FuncApartment = () => {
     (async () => {
-      const DATA = await fetch(`http://localhost:4000/bank/${sum}`, {
+      const DATA = await fetch(`https://houses-online.herokuapp.com/bank/${sum}`, {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",
@@ -99,7 +99,7 @@ email:''
    console.log(lname.current.value,
     email.current.value);
 (async()=>{
-  const DATA = await  fetch(`http://localhost:4000/sale`,{
+  const DATA = await  fetch(`https://houses-online.herokuapp.com/sale`,{
     method:'POST',
     headers:{
       "Content-Type": "Application/json",
