@@ -1,6 +1,8 @@
 import "./Sale.css";
 import {  useRef, useState } from "react";
-// Components
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import close from '../../assets/img/close.svg'
+
 
 const Sale = ({ company }) => {
   const [complex, setComplex] = useState([]);
@@ -9,16 +11,16 @@ const Sale = ({ company }) => {
   const [house, setHouse] = useState([]);
   const [COMPANY, SETCOMPANY] = useState();
   const [COMPLEX, SETCOMPLEX] = useState();
-
+const history = useHistory()
   let companyId = useRef();
   let complexId = useRef();
   let apartmentId = useRef();
   let bankId = useRef();
-  let apartmentsLi = useRef();
+  let apartmentsLi = useRef(),fname=useRef(),lname=useRef(),email=useRef();
   const FuncCompany = () => {
     (async () => {
       const DATA = await fetch(
-        `https://houses-online.herokuapp.com/buy/${companyId.current.value}`,
+        `http://localhost:4000/buy/${companyId.current.value}`,
         {
           method: "GET",
           headers: {
@@ -37,7 +39,7 @@ const Sale = ({ company }) => {
   const FuncComplex = () => {
     (async () => {
       const DATA = await fetch(
-        `https://houses-online.herokuapp.com/buy/${companyId.current.value}/${complexId.current.value}`,
+        `http://localhost:4000/buy/${companyId.current.value}/${complexId.current.value}`,
         {
           method: "GET",
           headers: {
@@ -54,7 +56,7 @@ const Sale = ({ company }) => {
   };
   const FuncApartment = () => {
     (async () => {
-      const DATA = await fetch(`https://houses-online.herokuapp.com/bank/${sum}`, {
+      const DATA = await fetch(`http://localhost:4000/bank/${sum}`, {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",
@@ -71,12 +73,76 @@ const Sale = ({ company }) => {
   const funcBank = () => {};
   const selectLi = () => {
   };
-  console.log(banks);
-  console.log(house);
-  const Submit = ()=>{
+  let formData={
+    companyId:'',
+complexId:'',
+apartmentId:'',
+bankId:'',
+fName:'',
+lName:'',
+email:''
+  }
+  const Submit = (e)=>{
+    e.preventDefault();
+
+     formData.companyId=companyId.current.value;
+     formData.complexId=complexId.current.value;
+     formData.apartmentId=apartmentId.current.value;
+     formData.bankId=bankId.current.value
+   document.getElementById('modal').style.display='block'
+    }
+ const modalSubmit =(e)=>{
+   e.preventDefault();
+   formData.fName=fname.current.value
+   formData.lName=lname.current.value
+   formData.email=email.current.value
+   console.log(lname.current.value,
+    email.current.value);
+(async()=>{
+  const DATA = await  fetch(`http://localhost:4000/sale`,{
+    method:'POST',
+    headers:{
+      "Content-Type": "Application/json",
+    },
+    body:JSON.stringify(formData)
+  })
+  const allData = await DATA.json()
+  if(allData){
+ history.push('/')
+ alert('Muvaffaqiyatli !')
+ document.getElementById('modal').style.display='none'
+
+  }else{
+    
+    alert('Malumotlar xato kiritilgan')
+    history.push('/buy')
+   document.getElementById('modal').style.display='none'
 
   }
-  return (
+
+})()
+
+ }
+ const closeClick=()=>{
+ document.getElementById('modal').style.display='none'
+   
+ }
+   return (
+     <>
+      <div id="modal">
+          <div id="modal-body" >
+            <img src={close} width={50} id='close' onClick={closeClick} alt="img"/>
+                <form id="modal-form" onSubmit={modalSubmit } >
+                  <label htmlFor='fname' >First Name : </label>
+                  <input type='text' id='fname' ref={fname}  className="input"/><br/>
+                  <label htmlFor='lname' >Last Name : </label>
+                  <input type='text' id="lname" ref={lname} className="input" /><br/>
+                  <label htmlFor='email' >Email : </label>
+                  <input type='email' id="email" ref={email} className="input" /><br/>
+                  <button id="btn-modal" >Submit</button>
+                </form>
+          </div>
+      </div>
     <div id="container" className="div">
       <form id="form" onSubmit={Submit} >
         <div>
@@ -151,7 +217,7 @@ const Sale = ({ company }) => {
               </select>
             </div>
           )}
-        <button id="submit" type='submit'>Submit</button>
+        <button id="submit" >Submit</button>
 
         </div>
         <div>
@@ -230,6 +296,7 @@ const Sale = ({ company }) => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
