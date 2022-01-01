@@ -157,7 +157,7 @@ const Sale = ({ company }) => {
         <div>
           {COMPANY && (
             <div id="company">
-              <img src={COMPANY.media[0]} width={200} />
+              <img src={COMPANY.media[0]} width={200} alt="img"/>
               <h1>{COMPANY.name}</h1>
               <a href={COMPANY.link}  target='_blank' id="company-link" rel="noreferrer" >Companiya haqida batafsil</a>
 
