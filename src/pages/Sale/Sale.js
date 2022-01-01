@@ -1,7 +1,7 @@
 import "./Sale.css";
 import {  useRef, useState } from "react";
-// import { localUrl, herokuUrl } from "../../assets/config";
-
+import  herokuUrl  from "../../assets/config";
+console.log(herokuUrl);
 // Components
 
 const Sale = ({ company }) => {
@@ -20,7 +20,7 @@ const Sale = ({ company }) => {
   const FuncCompany = () => {
     (async () => {
       const DATA = await fetch(
-        `http://localhost:4000/buy/${companyId.current.value}`,
+        `https://houses-online.herokuapp.com/buy/${companyId.current.value}`,
         {
           method: "GET",
           headers: {
@@ -39,7 +39,7 @@ const Sale = ({ company }) => {
   const FuncComplex = () => {
     (async () => {
       const DATA = await fetch(
-        `http://localhost:4000/buy/${companyId.current.value}/${complexId.current.value}`,
+        `https://houses-online.herokuapp.com/buy/${companyId.current.value}/${complexId.current.value}`,
         {
           method: "GET",
           headers: {
@@ -56,7 +56,7 @@ const Sale = ({ company }) => {
   };
   const FuncApartment = () => {
     (async () => {
-      const DATA = await fetch(`http://localhost:4000/bank/${sum}`, {
+      const DATA = await fetch(`https://houses-online.herokuapp.com/bank/${sum}`, {
         method: "GET",
         headers: {
           "Content-Type": "Application/json",
@@ -73,6 +73,8 @@ const Sale = ({ company }) => {
   const funcBank = () => {};
   const selectLi = () => {
   };
+  console.log(banks);
+  console.log(house);
   const Submit = ()=>{
 
   }
