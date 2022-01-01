@@ -35,9 +35,9 @@ function App() {
           <Sale company={company}/>
 
         </Route>
-        {/* <Route path='*' >
+        <Route path='*' >
           <Error/>
-        </Route> */}
+        </Route>
       </Switch>
     <Footer/>
     </div>

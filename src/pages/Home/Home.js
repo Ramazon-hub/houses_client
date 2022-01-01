@@ -1,5 +1,4 @@
 import "./Home.css";
-import { useEffect, useRef, useState } from "react";
 
 // import { localUrl,herokuUrl } from '../../assets/config'
 
@@ -18,7 +17,7 @@ const Home = ({ company }) => {
              {
                company.map(c=>(
                  <li>
-                   
+
                  </li>
                ))
              }

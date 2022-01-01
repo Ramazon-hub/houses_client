@@ -1,6 +1,6 @@
 import "./Sale.css";
 import {  useRef, useState } from "react";
-import { localUrl, herokuUrl } from "../../assets/config";
+// import { localUrl, herokuUrl } from "../../assets/config";
 
 // Components
 
@@ -159,7 +159,7 @@ const Sale = ({ company }) => {
             <div id="company">
               <img src={COMPANY.media[0]} width={200} />
               <h1>{COMPANY.name}</h1>
-              <a href={COMPANY.link}  target='_blank' id="company-link" >Companiya haqida batafsil</a>
+              <a href={COMPANY.link}  target='_blank' id="company-link" rel="noreferrer" >Companiya haqida batafsil</a>
 
             </div>
           )}

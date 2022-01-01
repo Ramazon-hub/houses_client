@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Instagram from "../../assets/img/instagram.svg";
 import Tell from "../../assets/img/phone.svg";
 import Telegram from "../../assets/img/telegram.svg";
-import Linkedin from "../../assets/img/linkedin.svg";
 
 const Footer = () => {
   return (
@@ -19,6 +18,7 @@ const Footer = () => {
             <a
               href="tel:+998991337153"
               className="footer_link"
+              rel="noreferrer"
               target="_blank"
             >
               <img className="footer_img" src={Tell} alt="Tell number" />
@@ -29,6 +29,7 @@ const Footer = () => {
             <a
               href="https://telegram.me/Ramazon_Pardayev"
               target="_blank"
+              rel="noreferrer"
               className="footer_link"
             >
               <img className="footer_img" src={Telegram} alt="Telegram" />
@@ -40,6 +41,7 @@ const Footer = () => {
               href="https://www.instagram.com/_ramazon_pardayev_/"
               target="_blank"
               className="footer_link"
+              rel="noreferrer"
             >
               <img className="footer_img" src={Instagram} alt="Instagram" />
               <span>Instagram</span>

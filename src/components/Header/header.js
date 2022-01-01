@@ -1,8 +1,7 @@
 import "./header.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // images
-import Logo from "../../assets/img/ucharteam-logo5.png";
 
 const Header = () => {
   return (
